@@ -1,0 +1,1568 @@
+body {
+  background-color: #f8f9fa !important;
+}
+
+.ui.inverted.top.fixed.menu {
+  background-color: #343a40;
+}
+
+.ui.segment {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.react-calendar {
+  width: 100%;
+  border: none;
+  box-shadow: 0 1px 2px 0 rgba(34, 36, 38, 0.15);
+}
+
+/*home page styles*/
+
+.masthead .ui.menu .ui.button,
+.ui.menu a.ui.inverted.button {
+  margin-left: 0.5em;
+}
+
+.masthead h1.ui.header {
+  font-size: 4em;
+  font-weight: normal;
+}
+
+.masthead h2 {
+  font-size: 1.7em;
+  font-weight: normal;
+}
+
+/*end home page styles*/
+
+.react-datepicker-wrapper {
+  width: 100%;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+.nav-h {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 150px;
+  position: fixed;
+  width: 90%;
+  margin-top: 20px;
+}
+
+body {
+  margin: 0;
+}
+
+.ul-h {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  margin: 0px !important;
+}
+
+.li-h {
+  margin-left: 10px;
+  padding: 5px 20px;
+  font-size: 20px;
+  color: white;
+  display: flex;
+  align-items: center;
+  border: 2px solid transparent;
+}
+
+.li-h:hover {
+  border: 2px solid white;
+  cursor: pointer;
+}
+
+.hero {
+  background-color: #f8f9fa;
+  height: 100vh;
+  display: flex;
+}
+
+.left-h {
+  background-color: #f8f9fa;
+  height: 100%;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  padding-right: 90px;
+}
+
+.right-h {
+  background-color: #f8f9fa;
+  height: 100%;
+  width: 50%;
+  background-image: url("faks2.webp");
+  background-size: cover;
+  border-left: 3px solid black;
+}
+
+.right-login {
+  background-color: whitesmoke;
+  height: 100%;
+  width: 50%;
+}
+
+.tekst-h {
+  margin-top: 50px;
+  padding-left: 150px;
+}
+
+.slika {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  width: 1200px;
+}
+
+.h1-h {
+  font-size: 56px;
+}
+
+.p-h,
+.new-p-h {
+  margin: 0;
+  font-size: 32px;
+  max-width: 350px;
+}
+
+.dugmici-h {
+  margin-top: 20px;
+}
+
+.a-h {
+  text-decoration: none;
+  color: white;
+}
+
+.a-h:hover {
+  color: white;
+}
+
+.button-b {
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  margin-right: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+
+  border: 2px solid #5f666d;
+}
+
+.button-b:hover {
+  background-color: #357437;
+  border: 2px solid black;
+  cursor: pointer;
+}
+
+/*Ovde pocinju stilovi forme*/
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 16px 8px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  background-color: whitesmoke;
+}
+.button-f {
+  color: white;
+  padding: 14px 0;
+  margin: 10px 0;
+  width: 100%;
+}
+
+.button-f:hover {
+  margin: 9px 0;
+}
+
+.h2-h {
+  display: flex;
+  text-align: center;
+  margin: 0px !important;
+}
+button:hover {
+  opacity: 0.8;
+}
+.formcontainer {
+  text-align: left;
+  margin: 24px 50px 12px;
+}
+.container {
+  padding: 16px 0;
+  text-align: left;
+}
+span.psw {
+  float: right;
+  padding-top: 0;
+  padding-right: 15px;
+}
+
+.li-r {
+  margin-left: 10px;
+  padding: 5px 20px;
+  font-size: 20px;
+  color: black;
+  backdrop-filter: blur(10px);
+}
+
+.li-r:hover {
+  border: 1px solid black;
+}
+
+label {
+  font-size: 22px;
+}
+
+.h1-f {
+  font-size: 36px;
+}
+
+.grid {
+  justify-content: center;
+}
+
+.materijali-lista {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: min-content;
+  display: none;
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.hidden {
+  display: none;
+}
+
+.materijali-lista-foldera {
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  height: min-content;
+  margin-bottom: 20px;
+  padding: 30px;
+  height: min-content;
+  display: flex;
+  justify-content: space-between;
+}
+
+.folder-u-listi {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex: 1 0 auto;
+  gap: 5px;
+  align-items: center;
+  padding: 20px;
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: white;
+  font-size: 16px;
+  font-weight: 600;
+  box-shadow: 0 1px 2px 0 rgba(34, 36, 38, 0.3);
+}
+
+.folder-u-listi:hover {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.materijal {
+  display: flex;
+  justify-content: flex-start;
+  margin: 10px 10px;
+}
+
+.materijal-dugme {
+  width: 100%;
+  height: min-content;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: white;
+  font-size: 16px;
+  border: none;
+  box-shadow: 0 1px 2px 0 rgba(34, 36, 38, 0.3);
+}
+
+.materijal-dugme:hover {
+  cursor: pointer;
+}
+
+.prijavi-se-tekst {
+  margin-right: 5px;
+  color: #4caf50;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 0;
+}
+
+.prijavi-se-tekst:hover {
+  font-weight: 500;
+  border-bottom: 2px solid #4caf50;
+  cursor: pointer;
+}
+
+.h1-file {
+  display: flex;
+  justify-content: center;
+  font-size: 34px;
+  font-family: Roboto;
+}
+
+.uploadForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 80%;
+  margin: 0 auto !important;
+}
+
+.uploadForm input {
+  padding: 10px 0;
+  opacity: 0.5;
+}
+
+.posalji-fajl-dugme {
+  width: 100px;
+  margin: 0 auto;
+}
+
+.uploadForm,
+.komentari-slobodan-pristup {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px 0px;
+  padding: 15px 0;
+}
+
+.uploadForm-prijava,
+.komentari-slobodan-pristup {
+  font-size: 18px;
+  color: #5f666d;
+  align-items: center;
+}
+
+.komentari-slobodan-pristup {
+  margin-bottom: 0;
+  padding-top: 40px;
+  justify-content: center;
+}
+
+.forma-file {
+  background-color: white;
+  box-shadow: 0 1px 2px 0 rgba(34, 36, 38, 0.3);
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding-top: 50px;
+  padding-bottom: 30px;
+}
+
+.button-c {
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  padding: 8px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border: 1px solid black;
+  border-radius: 3px;
+  font-weight: 600;
+}
+
+.button-c:hover {
+  background-color: #357437;
+  cursor: pointer;
+}
+
+.tekst-file {
+  text-align: center;
+  line-height: 1.4;
+  margin: 0 50px;
+  font-size: 18px;
+  font-family: Roboto;
+  padding: 20px 0px;
+}
+
+#fileInput {
+  padding-top: 8px;
+}
+
+.menu-main {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  height: 70px;
+}
+
+.menu-left {
+  display: flex;
+}
+
+.menu-right {
+  display: flex;
+}
+
+.sivo-dugme {
+  background-color: #495057 !important;
+}
+
+.zeleno-dugme {
+  background-color: #4caf50 !important;
+}
+
+.post-u-listi {
+  padding: 20px 30px;
+  border-radius: 10px !important;
+  background-color: white;
+}
+
+.post-zaglavlje {
+  height: max-content !important;
+}
+
+.ui.tiny.circular.image.post-zaglavlje-slika img {
+  border-radius: 500rem !important;
+  width: 80px;
+  height: 80px;
+}
+
+.post-datum {
+  color: #828e99;
+  font-size: 12px;
+  padding: 5px 0;
+}
+
+.post-zaglavlje-sadrzaj {
+  padding: 20px !important;
+  padding-left: 0 !important;
+  margin-left: 20px !important;
+  height: min-content;
+}
+
+.post-zaglavlje-sadrzaj h3 {
+  color: #828e99;
+  line-height: 0.7;
+}
+
+.post-zaglavlje-sadrzaj h2 {
+  font-size: 20px !important;
+}
+
+.post-zaglavlje-kategorija {
+  position: absolute;
+  top: -15px;
+  right: -10px;
+}
+
+.description {
+  font-size: 18px;
+  word-wrap: break-word;
+}
+
+.ui.label {
+  border: 1px solid #828e99 !important;
+  background-color: white;
+  color: #828e99;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.ui.clearing.segment {
+  padding-top: 0;
+}
+
+.post-dno {
+  display: flex;
+  justify-content: space-between;
+}
+
+.post-dno-levo {
+  line-height: 2.2;
+}
+
+.post-dno .pregledi-broj {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.heart {
+  color: rgba(175, 33, 33, 0.756);
+}
+
+.heart:hover {
+  color: rgba(175, 33, 33, 0.756);
+}
+
+.outline {
+  color: black;
+}
+
+.ui.labeled.button.lajk-dugme {
+  padding: 10px !important;
+}
+
+.ui.primary.button.vidi-jos {
+  border: 1px solid #828e99 !important;
+  background-color: white;
+  color: #828e99;
+}
+
+.ui.primary.button.vidi-jos:hover {
+  background-color: whitesmoke;
+  border: 1px solid black !important;
+  color: black;
+}
+
+.ui.blue.button.kontaktiraj-autora {
+  border: 1px solid #828e99 !important;
+  background-color: white;
+  color: #828e99;
+}
+
+.ui.blue.button.kontaktiraj-autora:hover {
+  background-color: whitesmoke;
+  border: 1px solid black !important;
+  color: black;
+}
+
+.ui.primary.right.floated.button,
+.ui.red.right.floated.button {
+  border: 1px solid #828e99 !important;
+  background-color: white;
+  color: #828e99;
+}
+
+.ui.primary.right.floated.button:hover,
+.ui.red.right.floated.button:hover {
+  background-color: whitesmoke;
+  border: 1px solid black !important;
+  color: black;
+}
+
+.ui.teal.right.floated.button {
+  border: 1px solid #828e99 !important;
+  background-color: white;
+  color: #828e99;
+}
+
+.ui.teal.right.floated.button:hover {
+  background-color: whitesmoke;
+  border: 1px solid black !important;
+  color: black;
+}
+
+.ui.green.right.floated.button {
+  border: 1px solid #828e99 !important;
+  background-color: white;
+  color: #828e99;
+}
+
+.ui.green.right.floated.button:hover {
+  background-color: whitesmoke;
+  border: 1px solid black !important;
+  color: black;
+}
+
+.broj-lajkova {
+  margin-left: 5px;
+  color: #5f666d;
+}
+
+.right {
+  display: flex;
+  flex-grow: 1;
+  justify-content: flex-end;
+}
+
+.left {
+  display: flex;
+  flex-grow: 1;
+  justify-content: flex-start;
+}
+
+.container-myProfil {
+  display: flex;
+  width: 900px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+
+/*Odavde komentar bio*/
+@media screen and (max-width: 1050px) {
+  .container-myProfil {
+    flex-direction: column;
+    width: 100% !important;
+  }
+  .left-myProfil-hero {
+    margin: 0 auto;
+    width: 100% !important;
+  }
+
+  .left-myProfil {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    width: 700px;
+  }
+  .left-myProfil img {
+    border-radius: 50% !important;
+  }
+
+  .right-myProfil {
+    margin-left: 0 !important;
+  }
+}
+/*Do ovde komentar bio*/
+.left-myProfil-hero {
+  border-radius: 15px;
+  height: min-content;
+  display: flex;
+  flex-direction: column;
+}
+
+.left-myProfil {
+  padding: 20px;
+  background-color: white;
+  border-radius: 15px;
+  border: 1px solid rgba(34, 36, 38, 0.15);
+  box-shadow: 0 1px 2px 0 rgba(34, 36, 38, 0.15);
+  height: min-content;
+  position: relative;
+}
+
+.left-myProfile-buttons {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 15px;
+  border: 1px solid rgba(34, 36, 38, 0.15);
+  box-shadow: 0 1px 2px 0 rgba(34, 36, 38, 0.15);
+}
+
+.left-myProfile-buttons .ui.blue.button,
+.left-myProfile-buttons .ui.green.button,
+.left-myProfile-buttons .ui.red.button {
+  display: block;
+  margin: 2px 0;
+  border: 1px solid #828e99 !important;
+  border-radius: 8px;
+  background-color: white;
+  color: #828e99;
+}
+
+.left-myProfile-buttons .ui.blue.button:hover,
+.left-myProfile-buttons .ui.green.button:hover,
+.left-myProfile-buttons .ui.red.button:hover {
+  background-color: whitesmoke;
+  border: 1px solid black !important;
+  color: black;
+}
+
+.left-myProfil img {
+  border-radius: 10px;
+}
+
+.edit.icon {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  opacity: 0.6;
+}
+
+.edit-about {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.right-myProfil {
+  width: 700px;
+  margin-left: 20px;
+}
+
+.right-myProfil-About {
+  padding: 30px 50px;
+  background-color: white;
+  border-radius: 15px;
+  border: 1px solid rgba(34, 36, 38, 0.15);
+  box-shadow: 0 1px 2px 0 rgba(34, 36, 38, 0.15);
+  height: min-content;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.right-myProfil h3 {
+  color: #828e99;
+}
+
+.right-myProfil p {
+  margin-top: 15px;
+  font-family: Roboto;
+  font-size: 16px;
+  color: #5f666d;
+}
+
+.upload-photo-div,
+.update-about-div {
+  display: flex;
+  flex-direction: column;
+  height: min-content !important;
+  padding: 20px;
+  justify-content: center;
+  background-color: white;
+  width: 100%;
+  height: 100px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  align-items: center;
+  border: 1px solid rgba(34, 36, 38, 0.15);
+  box-shadow: 0 1px 2px 0 rgba(34, 36, 38, 0.15);
+  position: relative;
+}
+
+.upload-photo-div div,
+.update-about-div div {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.upload-photo-div-dugme-izadji,
+.update-about-div-dugme-izadji {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  font-weight: bold;
+}
+
+.upload-photo-div button,
+.update-about-div button {
+  padding: 5px 10px;
+  background-color: whitesmoke;
+  border-radius: 5px;
+  border: 1px solid rgba(34, 36, 38, 0.15);
+  box-shadow: 0 1px 2px 0 rgba(34, 36, 38, 0.15);
+}
+
+.forma-kreiranje-posta {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  background-color: white;
+  border-radius: 15px;
+  border: 1px solid rgba(34, 36, 38, 0.15);
+  box-shadow: 0 1px 2px 0 rgba(34, 36, 38, 0.15);
+  margin-bottom: 20px;
+  padding: 40px 20px;
+  height: min-content;
+}
+
+.forma-kreiranje-posta .ui.positive.button {
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  padding: 8px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border: 1px solid black;
+  border-radius: 3px;
+  margin: 0 auto;
+  font-weight: 600 !important;
+}
+
+.forma-kreiranje-posta .ui.positive.button:hover {
+  background-color: #357437;
+  cursor: pointer;
+}
+
+.forma-selektovanje-kategorije {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  background-color: white;
+  border-radius: 15px;
+  border: 1px solid rgba(34, 36, 38, 0.15);
+  box-shadow: 0 1px 2px 0 rgba(34, 36, 38, 0.15);
+  margin-bottom: 20px;
+  padding: 20px 20px;
+  height: min-content;
+}
+
+.forma-selektovanje-kategorije .ui.button {
+  flex: 1 0 auto;
+  border: 1px solid #828e99 !important;
+  background-color: white;
+  color: #828e99;
+}
+
+.ui.teal.tiny.inverted.top.attached.center.aligned.segment {
+  margin-bottom: 20px;
+  padding-top: 22px;
+  font-size: 14px;
+}
+
+.ui.attached.segment {
+  border-radius: 10px;
+  box-shadow: 0 1px 2px 0 rgba(34, 36, 38, 0.2) !important;
+  padding-bottom: 20px;
+  margin-bottom: 40px;
+}
+
+.div-sve-poruke {
+  padding: 10px 30px 30px 30px;
+}
+
+.div-sve-poruke img {
+  width: 80px !important;
+  height: 80px !important;
+  border-radius: 50%;
+}
+
+.div-poruka * {
+  padding: 0;
+  margin: 0;
+}
+
+.div-poruka {
+  padding: 8px 25px;
+  margin: 0 30px;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px 0 rgba(34, 36, 38, 0.15);
+  height: min-content;
+  align-self: center;
+  max-width: 260px;
+}
+
+.div-poruka .sadrzaj-poruke {
+  font-size: 16px;
+}
+
+.sadrzaj-poruke {
+  word-wrap: break-word;
+}
+
+.seen-sent {
+  display: flex;
+  justify-content: flex-end;
+  color: #a8dadc;
+  font-size: 12px;
+  line-height: 1;
+}
+
+.div-sve-poruke .right {
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+  margin: 15px 0;
+}
+
+.div-sve-poruke .left {
+  margin: 15px 0;
+}
+
+.div-sve-poruke .left .div-poruka {
+  background-color: #eeeeee;
+}
+
+.div-sve-poruke .right .div-poruka {
+  background-color: #457b9d;
+  color: white;
+}
+
+.left .div-poruka .vreme {
+  font-size: 12px;
+  color: #828e99;
+}
+
+.right .div-poruka .vreme {
+  font-size: 12px;
+  color: #a8dadc;
+}
+
+.ui.form textarea {
+  border-radius: 10px;
+  padding: 5px 20px;
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+.ui.form textarea:focus {
+  border-radius: 10px;
+  padding: 5px 20px;
+  margin-top: 20px;
+}
+
+.oko-textarea {
+  padding: 5px 20px;
+}
+
+.div-inbox-hero {
+  padding: 20px 40px;
+  border-radius: 15px;
+}
+
+.div-inbox-hero img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.div-inbox-hero .item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding: 10px 25px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 1px 2px 0 rgba(34, 36, 38, 0.2) !important;
+  height: 135px;
+}
+
+.item-left {
+  display: flex;
+  gap: 20px;
+  max-width: 600px;
+}
+
+.item-right {
+  align-self: center;
+}
+
+.div-inbox-hero .content .header {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.div-inbox-hero .content .description {
+  font-size: 16px;
+  color: #5f666d;
+  margin-top: 5px;
+}
+
+.div-inbox-hero .content {
+  padding: 10px;
+}
+
+.pre-koliko {
+  font-size: 12px;
+  color: #828e99;
+}
+
+.ui.clearing.segment.detalji-posta-forma {
+  padding: 25px 50px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 1px 2px 0 rgba(34, 36, 38, 0.2) !important;
+}
+
+.ui.grey.header {
+  margin: 20px 0px 30px 0;
+  font-size: 24px;
+}
+
+.ui.form .ui.input input {
+  font-size: 16px;
+  color: #5f666d;
+}
+
+.divider.text {
+  font-size: 16px;
+  color: #5f666d;
+}
+
+.slika-komentar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.div-komentar {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 15px 10px;
+}
+
+.div-komentar-levo {
+  display: flex;
+  gap: 15px;
+}
+
+.div-komentar-levo .div-sadrzaj-komentara .author {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.div-komentar-levo .div-sadrzaj-komentara .metadata {
+  font-size: 12px;
+  color: #828e99;
+}
+
+.div-sadrzaj-komentara {
+  max-width: 500px;
+}
+
+.div-komentar-levo .div-sadrzaj-komentara .text {
+  font-size: 16px;
+}
+
+.div-komentar-desno {
+  align-self: center;
+  width: 75px;
+}
+
+.ui.red.tiny.icon.right.floated.button {
+  width: min-content;
+}
+
+.ui.clearing.attached.segment .ui.form {
+  padding: 30px 10px 30px 10px;
+}
+
+.ui.clearing.attached.segment .ui.form textarea {
+  margin-top: 0;
+}
+
+.ui.header {
+  padding-top: 8px;
+}
+
+/*POSTOVI NOVI STIL */
+
+.postovi-hero {
+  width: 800px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 980px) {
+  .postovi-hero {
+    width: 100%;
+  }
+
+  .forma-kreiranje-posta .tekst-file {
+    margin: 0;
+  }
+
+  .forma-kreiranje-posta {
+    padding-left: 35px;
+    padding-right: 35px;
+  }
+}
+
+.div-komentar-levo {
+  width: 75%;
+  height: min-content;
+}
+
+.div-komentar-levo .text {
+  word-wrap: break-word;
+  width: 500px;
+  height: min-content;
+}
+
+@media screen and (max-width: 767px) {
+  .div-komentar-levo .text {
+    width: 400px;
+  }
+  .post-zaglavlje-sadrzaj {
+    margin-left: 0 !important;
+  }
+
+  .ui.tiny.circular.image.post-zaglavlje-slika img {
+    width: 125px !important;
+    height: 125px !important;
+  }
+
+  .post-dno {
+    flex-direction: column-reverse;
+  }
+
+  .post-dno-desno {
+    display: flex;
+    width: 100% !important;
+  }
+
+  .post-dno-levo {
+    color: #828e99;
+    display: none;
+  }
+
+  .post-dno-desno .ui.primary.button.vidi-jos,
+  .post-dno .ui.blue.button.kontaktiraj-autora,
+  .post-dno .ui.labeled.button.lajk-dugme {
+    flex: 1 0 auto;
+    padding: 8px 15px;
+    margin-left: 2px;
+    justify-content: flex-end;
+  }
+
+  .ui.clearing.segment.detalji-posta-forma {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .ui.clearing.segment .ui.red.right.floated.button,
+  .ui.clearing.segment .ui.green.right.floated.button {
+    width: 48%;
+  }
+
+  .h1-file {
+    font-size: 26px;
+    margin-bottom: 0;
+  }
+
+  .forma-file {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .forma-file .tekst-file {
+    margin: 0;
+    margin-top: 5px;
+    padding: 20px;
+    padding-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .div-komentar-levo .text {
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .div-komentar-levo .text {
+    width: 200px;
+  }
+
+  .container-myProfil {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+/*Ispod je media za homepage*/
+
+@media (max-width: 1550px) {
+  .tekst-h .h1-h {
+    font-size: 48px;
+  }
+  .new-p-h {
+    font-size: 28px;
+  }
+
+  .tekst-h .p-h .new-p-h {
+    font-size: 26px;
+  }
+
+  .button-b {
+    font-size: 16px;
+    padding: 12px 26px;
+  }
+}
+
+@media (max-width: 1085px) {
+  .right-h {
+    background-color: #f8f9fa;
+    height: 100%;
+    width: 50%;
+    background-image: url("faks2.webp");
+    background-size: cover;
+    border-left: 3px solid black;
+    display: none;
+  }
+
+  .left-h {
+    background-image: url("faks2.webp");
+    width: 100%;
+    padding-right: 40px;
+    position: relative;
+  }
+
+  .left-h::after {
+    content: "";
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .hero {
+    display: block;
+  }
+
+  .nav-h,
+  .tekst-h {
+    padding-left: 90px;
+    padding-right: 90px;
+  }
+
+  .h2-h {
+    align-self: center;
+  }
+
+  .nav-h {
+    color: white;
+    z-index: 1;
+  }
+
+  .tekst-h h1 {
+    font-size: 48px;
+    color: white;
+    position: relative;
+    z-index: 1;
+  }
+
+  .h2-h {
+    color: white;
+    position: relative;
+    z-index: 1;
+  }
+
+  .tekst-h p {
+    font-size: 26px;
+    color: #f8f9fa;
+    position: relative;
+    z-index: 1;
+  }
+
+  .tekst-h .button-b {
+    font-size: 16px;
+    padding: 12px 26px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .button-b {
+    background-color: #4caf4fa9; /* Green */
+    border: 2px solid #b8b8b8;
+  }
+
+  .button-b:hover {
+    background-color: #357437;
+    border: 2px solid white;
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .nav-h,
+  .tekst-h {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .h1-file {
+    text-align: center;
+  }
+
+  .div-inbox-hero .item {
+    flex-direction: column;
+    padding-bottom: 20px;
+  }
+
+  .div-inbox-hero .item .item-left {
+    flex-direction: column;
+    margin: 0 auto;
+  }
+
+  .div-inbox-hero .item .item-left .content {
+    width: 100%;
+  }
+
+  .div-poruka {
+    width: 50%;
+  }
+
+  .ui.clearing.segment {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+/*KOD CHATGPT + ispravka*/
+
+.container-myProfil {
+  max-width: 100%;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.left-myProfil {
+  margin-bottom: 20px;
+}
+
+.right-myProfil {
+  margin-left: 20px;
+}
+
+@media screen and (max-width: 1050px) {
+  .left-myProfil,
+  .right-myProfil {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .left-myProfil {
+    display: flex;
+    justify-content: center;
+  }
+
+  .left-myProfil img {
+    border-radius: 50%;
+    width: 250px !important;
+  }
+
+  .container-myProfil {
+    flex-direction: column;
+    width: min-content;
+  }
+
+  .post-zaglavlje-sadrzaj {
+    padding-left: 0 !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+    padding-top: 30px !important;
+  }
+
+  .post-zaglavlje {
+    margin-bottom: 0 !important;
+  }
+}
+
+/*MENU*/
+.burger-menu {
+  display: none !important;
+}
+
+.burger-menu-list {
+  position: absolute;
+  top: 5rem;
+  right: 0;
+  display: none;
+  padding: 40px;
+  background-color: rgba(128, 128, 128, 0.97);
+  width: 100%;
+}
+
+.burger-menu-list a {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+@media screen and (max-width: 767px) {
+  .postovi-menu,
+  .materijali-menu,
+  .administrator-menu,
+  .inbox-menu,
+  .mojProfil-menu,
+  .dugme-menu {
+    display: none !important;
+  }
+
+  .burger-menu {
+    display: flex !important;
+  }
+
+  .vidljiv {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/*Nav HomePage*/
+
+.sidebar.icon {
+  color: white;
+  line-height: 1;
+  font-size: 24px;
+}
+
+@media screen and (max-width: 1196px) {
+  .slobodan-pristup,
+  .login,
+  .registration,
+  .vrati-se-na-pocetnu,
+  .odjavi-se {
+    display: none !important;
+  }
+
+  .nav-h {
+    padding-right: 20px;
+  }
+
+  .burger-menu-h {
+    display: flex !important;
+  }
+
+  .vidljiv {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.burger-menu-h {
+  display: none;
+}
+
+.burger-menu-list-h {
+  display: none;
+}
+
+.burger-menu-list-h ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.burger-menu-list-h ul li a,
+.burger-menu-list-h ul li {
+  color: #ccc !important;
+}
+
+.vidljiv2 {
+  display: flex;
+  position: absolute;
+  top: 5rem;
+  right: 13%;
+  justify-content: center;
+  background-color: rgba(128, 128, 128, 0.9);
+  z-index: 3;
+  padding: 10px 20px;
+  border-radius: 7px;
+}
+
+.burger-menu-h:hover,
+.burger-menu-list-h li:hover,
+.burger-menu-list-h li a:hover,
+.burger-menu-list-h div:hover {
+  cursor: pointer;
+  color: white !important;
+}
+
+.burger-menu-list-h li {
+  display: flex;
+  padding: 5px 15px;
+  font-size: 16px;
+  justify-content: center;
+}
+
+.burger-menu-list-h {
+  padding-bottom: 0;
+}
+
+.zatvori-burger-h {
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+  padding-top: 5px;
+  color: #ccc;
+}
+
+/*INBOX */
+.div-inbox-hero {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.div-inbox-hero .item {
+  height: min-content !important;
+}
+
+.div-inbox-hero .content {
+  width: 70%;
+}
+
+.div-inbox-hero .item .item-left {
+  width: 75%;
+}
+
+@media screen and (max-width: 767px) {
+  .div-inbox-hero .item .item-left {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .div-inbox-hero .item .item-left {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .div-inbox-hero .item .item-left {
+    width: 50%;
+  }
+
+  .div-inbox-hero .item .item-left .content {
+    padding-left: 0;
+  }
+
+  .div-inbox-hero .item .item-left p {
+    font-size: 14px;
+  }
+
+  .div-inbox-hero .item .item-left img {
+    width: 90px !important;
+    height: 90px !important;
+    align-self: center;
+  }
+
+  .div-inbox-hero .item .item-right {
+    width: 100px;
+  }
+
+  .div-inbox-hero .item {
+    padding-top: 20px;
+  }
+}
+
+.nema-vise {
+  margin-top: 20px;
+  padding: 20px;
+  color: #828e99;
+}
+
+.nema-vise .tekst-file {
+  padding: 10px;
+}
