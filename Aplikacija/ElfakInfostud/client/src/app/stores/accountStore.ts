@@ -7,10 +7,12 @@ import { PagingParams } from "../domain/pagination";
 
 export default class AccountStore {
   user: User | null = null;
+  kafkaInitialized  = false;
 
   constructor() {
     makeAutoObservable(this, {
       user: observable,
+      kafkaInitialized : observable,
       setUserImage: action,
     });
   }
@@ -52,10 +54,13 @@ export default class AccountStore {
   login = async (userForm: UserForm) => {
     try {
       const loggedUser = await agent.Account.login(userForm);
-
       store.commonStore.setToken(loggedUser.token);
+      store.notificationStore.createHubConnection(loggedUser.username!);
+      if(!this.kafkaInitialized)
+        await agent.Posts.configKafkaForPosts(loggedUser.username);
       runInAction(() => {
         this.user = loggedUser;
+       
       });
       if (window.location.pathname === "/") router.navigate("/posts");
       else window.location.reload();
@@ -68,33 +73,47 @@ export default class AccountStore {
 
   getCurrentUser = async () => {
     try {
+      console.log(store.notificationStore.notifications.length);
       const currentUser = await agent.Account.currentUser();
+      console.log(currentUser.username);
+      
+      
+      store.notificationStore.createHubConnection(currentUser.username);
+      await agent.Posts.configKafkaForPosts(currentUser.username);
       runInAction(() => {
         this.user = currentUser;
+        this.kafkaInitialized = true;
       });
     } catch (error) {
       console.log(error);
     }
   };
 
-  logout = () => {
-    this.user = null;
-    store.commonStore.setToken(null);
-    router.navigate("/");
-    //resetovanje postStore-a
-    store.postStore.posts = [];
-    store.postStore.postoviKorisnika = [];
-    store.postStore.selectedPost = undefined;
-    store.postStore.allowIncreaseNumberOfViews = true;
-    store.postStore.initialLoadingApprovedPosts = true;
-    store.postStore.initialLoadingNotApprovedPosts = true;
-    store.postStore.initialLoadingUserPosts = true;
-    store.postStore.initialLoadingUserPosts2 = true;
-    store.postStore.changeViewForLikes = false;
-    store.postStore.pagination = null;
-    store.postStore.pagination2 = null;
-    store.postStore.pagingParams = new PagingParams();
-    store.postStore.pagingParams2 = new PagingParams();
-    store.postStore.predicate = "svi";
-  };
-}
+  logout = async () => {
+    await agent.Posts.disconnectConsumersForPosts(this.user?.username!);
+    runInAction(()=>{
+
+      store.notificationStore.stopHubConnection();
+      store.notificationStore.notifications = [];
+      this.user = null;
+      store.commonStore.setToken(null);
+      router.navigate("/");
+      //resetovanje postStore-a
+      store.postStore.posts = [];
+      store.postStore.postoviKorisnika = [];
+      store.postStore.selectedPost = undefined;
+      store.postStore.allowIncreaseNumberOfViews = true;
+      store.postStore.initialLoadingApprovedPosts = true;
+      store.postStore.initialLoadingNotApprovedPosts = true;
+      store.postStore.initialLoadingUserPosts = true;
+      store.postStore.initialLoadingUserPosts2 = true;
+      store.postStore.changeViewForLikes = false;
+      store.postStore.pagination = null;
+      store.postStore.pagination2 = null;
+      store.postStore.pagingParams = new PagingParams();
+      store.postStore.pagingParams2 = new PagingParams();
+      store.postStore.predicate = "svi";
+      this.kafkaInitialized = false;
+    })
+    };
+  }

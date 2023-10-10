@@ -1,7 +1,7 @@
 import { observer } from "mobx-react-lite";
 import { Link, NavLink } from "react-router-dom";
 import { Button, Icon, Menu, MenuItem } from "semantic-ui-react";
-import { useStore } from "../stores/store";
+import { store, useStore } from "../stores/store";
 import { router } from "../router/Router";
 import modalStore from "../stores/modalStore";
 import LoginForm from "../../features/users/LoginForm";
@@ -63,6 +63,24 @@ export default observer(function NavigationBar() {
           >
             <i className="sidebar icon"></i>
           </MenuItem>
+
+          {commonStore.token ? (
+            <Menu.Item
+              className="inbox-menu"
+              position="left"
+              as={NavLink}
+              to="/notificationsForPosts"
+              onClick={()=> store.notificationStore.unreadNotificationsCount> 0 && store.notificationStore.readAllNotifications(accountStore.user?.username!)}
+            >
+              <Icon name="commenting" />
+              Notifications&nbsp;
+              {store.notificationStore.unreadNotificationsCount > 0 && (
+                <span style={{ color: "red" }}>
+                  {store.notificationStore.unreadNotificationsCount}
+                </span>
+              )}
+            </Menu.Item>
+          ) : null}
 
           {commonStore.token ? (
             <Menu.Item

@@ -15,6 +15,7 @@ namespace Domain
         public string Image { get; set; }
     
         public ICollection<Post> Posts { get; set; } = new List<Post>();
+        public int ViewedNotificationsCount { get; set; }
     
     }
 }

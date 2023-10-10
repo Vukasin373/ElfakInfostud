@@ -9,6 +9,8 @@ using Persistence;
 using FluentValidation;
 using Application.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using Confluent.Kafka;
+using Confluent.Kafka.Admin;
 
 namespace Application.Posts
 {
@@ -31,6 +33,7 @@ namespace Application.Posts
         {
         private readonly DataContext _context;
         private readonly ICurrentUser _currentUser;
+        
             public Handler(DataContext context, ICurrentUser currentUser)
             {
             _currentUser = currentUser;
@@ -50,8 +53,23 @@ namespace Application.Posts
                     
                 _context.Posts.Add(request.Post);
                 var success = await _context.SaveChangesAsync() > 0;
-                if(success)
+                if (success)
+                {
+                    // using var adminClient = new AdminClientBuilder(new AdminClientConfig { BootstrapServers = "localhost:9092" }).Build();
+                    // // Kreiranje teme za post
+                    // var topicName = request.Post.Id.ToString();
+                    // var topicSpec = new TopicSpecification { Name = topicName, NumPartitions = 1, ReplicationFactor = 1 };
+                    // await adminClient.CreateTopicsAsync(new List<TopicSpecification> { topicSpec });
+                    // //_logger.LogInformation($"Creating Kafka topic for post: {topicName}");
+                    // // Pretpostavka je da ste implementirali metodu CreateTopic u svom KafkaService
+
+
+                    // // Pokretanje potrošača za ovu temu
+                    // //_logger.LogInformation($"Starting consumer for post topic: {topicName}");
+                    // Task.Run(() => _kafkaService.Consume(topicName));
+                    
                     return Result<Unit>.Success(Unit.Value);
+                }
                 return Result<Unit>.Failure("Failed creating post");
             }
         }

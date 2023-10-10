@@ -4,6 +4,7 @@ token: string;
 image: string;
 role:string;
 about:string;
+viewedNotificationsCount: number;
 }
 
 export interface UserForm {

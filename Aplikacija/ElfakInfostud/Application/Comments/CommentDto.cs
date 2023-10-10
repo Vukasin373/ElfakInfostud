@@ -7,7 +7,7 @@ namespace Application.Comments
 {
     public class CommentDto
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
         public string Content { get; set; }
         public DateTime Time { get; set; }
         public string CreatorUsername { get; set; }

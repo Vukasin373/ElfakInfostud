@@ -2,6 +2,7 @@ import { HttpTransportType, HubConnection, HubConnectionBuilder, LogLevel } from
 import { makeAutoObservable, runInAction } from "mobx";
 import { store } from "./store";
 import { CommentChat } from "../domain/comment";
+import agent from "../api/agent";
 
 
 export default class CommentStore 
@@ -16,7 +17,7 @@ export default class CommentStore
     createHubConnection = (postId: string) => {
         if(store.postStore.selectedPost) {
             this.hubConnection = new HubConnectionBuilder()
-            .withUrl('http://localhost:5293/chatComments?postId='+postId,{
+            .withUrl('http://localhost:5293/chatComments?postId='+postId + '&username=' + store.accountStore.user?.username,{
                 accessTokenFactory : () => store.accountStore.user?.token!
             })
             .withAutomaticReconnect()
@@ -36,12 +37,20 @@ export default class CommentStore
 
             this.hubConnection.on('ReceiveComment', (comment:CommentChat) => {
                 runInAction(()=>{
+                    console.log(comment.content);
                     comment.time = new Date(comment.time);
-                    this.comments.unshift(comment);
+                    let samePost = this.comments.find(x=>x.id === comment.id);
+                    if(samePost===undefined){
+
+                        this.comments.unshift(comment);
+                        this.comments.sort((a, b) => b.time.getTime() - a.time.getTime());
+                    }
+                    else
+                        console.log("duplikat");
                 })
             })
 
-            this.hubConnection.on('DeleteComment',(id:number)=>{
+            this.hubConnection.on('DeleteComment',(id:string)=>{
                 runInAction(()=>{
                     this.comments = this.comments.filter(x=>x.id!== id);
                 })
@@ -56,6 +65,7 @@ export default class CommentStore
 
     clearComments = () => {
         this.comments = [];
+        agent.Posts.disconnectConsumerForSpecificPost(store.accountStore.user?.username!, store.postStore.selectedPost?.id!);
         this.stopHubConnection();
     }
 

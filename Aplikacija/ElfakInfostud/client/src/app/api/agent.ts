@@ -88,12 +88,16 @@ const Posts = {
   like: (id: string) => requests.post<void>(`/posts/like/${id}`, {}),
   listaPostovaKorisnika: (username: string) =>
     requests.get<Post[]>(`/posts/postoviKorisnika/?username=${username}`),
-};
+    configKafkaForPosts: (username: string) => requests.put<void>(`/posts/configKafkaForPosts/${username}`,{} ),
+    disconnectConsumersForPosts: (username: string) => requests.put<void>(`/posts/disconnectConsumersForPosts/${username}`,{} ),
+    disconnectConsumerForSpecificPost: (username: string, specificPostId: string) => requests.put<void>(`/posts/disconnectConsumerForSpecificPost/${username}/${specificPostId}`,{} ),
+  };
 
 const Account = {
   register: (user: UserForm) => requests.post<User>("/account/register/", user),
   login: (user: UserForm) => requests.post<User>("/account/login/", user),
   currentUser: () => requests.get<User>("/account"),
+ 
 };
 
 const Profiles = {
@@ -119,11 +123,17 @@ const Messages = {
   checkForNewMessage: () => requests.get<number>("/message/checkForNewMessage"),
 };
 
+const Notifications = {
+  readAllNotifications: (username: string,newNumOfViewedNotifications: number ) =>
+  requests.put<void>(`/notification?username=${username}&newNumOfViewedNotifications=${newNumOfViewedNotifications}`, {}),
+}
+
 const agent = {
   Posts,
   Account,
   Profiles,
   Messages,
+  Notifications
 };
 
 export default agent;

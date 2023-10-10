@@ -14,6 +14,8 @@ import ChatPage from "../../features/chat/ChatPage";
 import MyProfile from "../../features/profiles/MyProfile";
 import Inbox from "../../features/chat/Inbox";
 import RequireAuth from "./RequireAuth";
+import NotificationsDashboard from "../../features/notifications/NotificationsDashboard";
+
 
 export const routes: RouteObject[] = [
   {
@@ -29,6 +31,8 @@ export const routes: RouteObject[] = [
           { path: "myProfile", element: <MyProfile /> },
           { path: "chat/:username/:chatName", element: <ChatPage /> },
           { path: "inbox", element: <Inbox /> },
+          { path: "notificationsForPosts", element: <NotificationsDashboard /> },
+
         ],
       },
       { path: "profile/:username", element: <Profile /> },
