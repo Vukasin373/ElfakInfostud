@@ -12,5 +12,6 @@ namespace API.DTOs
         public string Token { get; set; }
         public string Role { get; set; }
         public string About { get; set; }
+        public int ViewedNotificationsCount { get; set; }
     }
 }

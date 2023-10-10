@@ -44,7 +44,7 @@ namespace API.Controllers
         {
             UserName = registerDto.Username,
             Email = registerDto.Email,
-            Role = "User"
+            Role = "Administrator"
         };
 
         var result = await _userManager.CreateAsync(user,registerDto.Password);
@@ -89,9 +89,12 @@ namespace API.Controllers
             Token = _tokenService.CreateToken(user),
             Role = user.Role,
             Image = user.Image,
-            About = user.About
+            About = user.About,
+            ViewedNotificationsCount = user.ViewedNotificationsCount
         };
         return userDto;
     }
+
+
   }
 }

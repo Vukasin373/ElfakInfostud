@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using API.Kafka;
 using Application.Comments;
 using MediatR;
 using Microsoft.AspNetCore.SignalR;
@@ -11,17 +12,26 @@ namespace API.SignalR
     public class ChatCommentHub : Hub
     {
         private readonly IMediator _mediator;
-        public ChatCommentHub(IMediator mediator)
+        private readonly IKafkaService _kafkaService; 
+
+        public ChatCommentHub(IMediator mediator, IKafkaService kafkaService) 
         {
             this._mediator = mediator;
+            this._kafkaService = kafkaService;
         }
 
 
         public async Task SendComment(CreateComment.Command command)
         {
             
-            var comment = await _mediator.Send(command);
-            await Clients.Group(command.PostId.ToString()).SendAsync("ReceiveComment", comment.Value);
+            var result = await _mediator.Send(command);
+            
+            if(result.Value.Notification!=null)
+                await _kafkaService.ProduceNotification("notifications_"+result.Value.Notification.PostId.ToString(), result.Value.Notification);
+
+            await _kafkaService.ProduceComment("comments_"+result.Value.PostId.ToString(), result.Value.Comment);
+
+            //await Clients.Group(command.PostId.ToString()).SendAsync("ReceiveComment", result.Value.Comment);
 
         }
 
@@ -34,9 +44,11 @@ namespace API.SignalR
         {
             var httpContext = Context.GetHttpContext();
             var postId = httpContext.Request.Query["postId"];
-            await Groups.AddToGroupAsync(Context.ConnectionId,postId);
-            var result = await _mediator.Send(new ListComments.Query{PostId = Guid.Parse(postId)});
-            await Clients.Caller.SendAsync("LoadComments",result.Value);
+            var username = httpContext.Request.Query["username"];
+            await Groups.AddToGroupAsync(Context.ConnectionId,postId.ToString());
+            //var result = await _mediator.Send(new ListComments.Query{PostId =.Parse(postId)});
+            //await Clients.Caller.SendAsync("LoadComments",result.Value);
+             await _kafkaService.ConsumeComment("comments_"+postId.ToString(), postId.ToString(), username);
         }
     }
 }

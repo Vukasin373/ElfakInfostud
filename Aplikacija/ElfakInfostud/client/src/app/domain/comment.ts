@@ -1,5 +1,5 @@
 export interface CommentChat {
-    id:number;
+    id:string;
     content:string;
     time: Date;
     creatorUsername: string;

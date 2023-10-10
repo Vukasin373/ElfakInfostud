@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Application.Core;
+using API.Kafka;
 using Application.Posts;
 using Domain;
 using Microsoft.AspNetCore.Authorization;
@@ -16,10 +17,26 @@ namespace API.Controllers
     public class PostsController : BaseController
     {
 
+        private readonly IKafkaService _kafkaService;
+
+        public PostsController(IKafkaService kafkaService)
+        {
+            _kafkaService = kafkaService;
+        }
+
+
         [HttpPost("createPost")]
         public async Task<IActionResult> CreatePost(Post post)
         {
-             return GetResult(await Mediator.Send(new CreatePost.Command{Post = post}));
+             var result =  await Mediator.Send(new CreatePost.Command{Post = post});
+             if(result.IsSuccess){
+
+                //_kafkaService.CreateTopic(post.Id.ToString());
+                await _kafkaService.CreateTopic("notifications_"+post.Id.ToString(),true);
+                await _kafkaService.CreateTopic("comments_"+post.Id.ToString(),false);
+
+             }
+            return GetResult(result);
         }
 
         [HttpGet]
@@ -70,6 +87,26 @@ namespace API.Controllers
         {
             return GetResult(await Mediator.Send(new LikePost.Command { PostId = id } ));
         }
-        
+
+     
+        [HttpPut("configKafkaForPosts/{username}")]
+         public async Task<ActionResult> ConfigKafkaForPosts(string username)
+         {
+             return GetResult(await Mediator.Send(new ConfigKafkaForPosts.Query { Username = username } ));
+         }
+
+        [HttpPut("disconnectConsumersForPosts/{username}")]
+         public async Task<ActionResult> DisconnectConsumersForPosts(string username)
+         {
+             return GetResult(await Mediator.Send(new DisconnectConsumersForPosts.Query { Username = username} ));
+         }
+         
+        [HttpPut("disconnectConsumerForSpecificPost/{username}/{postId}")]
+         public async Task<ActionResult> DisconnectConsumersForPosts(string username, string postId)
+         {
+             return GetResult(await Mediator.Send(new DisconnectConsumerForPost.Query { Username = username, SpecificPostId = postId} ));
+         }
+         
+
     }
 }
